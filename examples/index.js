@@ -1,15 +1,25 @@
 import { foo, STATES } from "./data.jsonpf";
+import { h, render, createElement } from "preact";
 
 const root = document.querySelector("#root");
 
-foo.state === STATES.FETCHED &&
-  foo.data.forEach(({ title, body }) => {
-    const article = document.createElement("article");
-    const h1 = document.createElement("h1");
-    const p = document.createElement("p");
-    h1.innerHTML = title;
-    p.innerHTML = body;
-    article.appendChild(h1);
-    article.appendChild(p);
-    root.appendChild(article);
-  });
+const Article = ({ title, body }) => {
+  console.log(title, body);
+  return (
+    <article>
+      <h1>{title}</h1>
+      <p>{body}</p>
+    </article>
+  );
+};
+
+const App = ({ data, state }) => {
+  return (
+    <main>
+      {state === STATES.FETCHED &&
+        data.map((props, i) => <Article {...props} key={i} />)}
+    </main>
+  );
+};
+
+render(<App {...foo} />, root);
