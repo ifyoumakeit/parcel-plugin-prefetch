@@ -14,14 +14,23 @@ Not sure of why you'd want this, but I was using it to learn ParcelJS's plugin s
   "url": "https://..."
 }]
 ```
-3. Parcel will prefetch the data and return these keys.
+3. Add `import {foo, STATES} from "./data.jsonpf"` to the top of file.
+4. `yarn parcel index.html` or whatever you use.
+5. Parcel will prefetch the data and return data in below format.
 ```js
-[{
-  "key": "foo",
-  "url": "https://...",
-  "state": "FETCHING" // FAILED || FETCHED
-  "data": {} // Data returned if "FETCHED"
-  "error": Error // Error returned if "FAILED"  
-}]
+{
+  foo: {
+    key: "foo",
+    url: "https://...",
+    state: "FETCHING" // FAILED || FETCHED
+    data: {} // Data returned if "FETCHED"
+    error: Error // Error returned if "FAILED"  
+  },
+  // States for comparison.
+  STATES: { 
+    FETCHING: "FETCHING",
+    FETCHED: "FETCHED",
+    FAILURE: "FAILURE"
+  }
+}
 ```
-4. A `STATES` key will also be return for comparison.
