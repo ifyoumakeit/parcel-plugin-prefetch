@@ -2,9 +2,9 @@
 
 Write some JSON to prefetch data in bundle. 
 
-Not sure of why you'd want this, but I was using it to learn ParcelJS's plugin system.
-
 ## How to use
+
+`yarn add parcel-plugin-prefetch`
 
 1. Create JSON file with extension `.jsonpf`
 2. JSON should be a list in the format...
