@@ -2545,11 +2545,10 @@ parcel-bundler@^1.6.2:
     worker-farm "^1.5.2"
     ws "^4.0.0"
 
-"parcel-plugin-ssr@file:..":
+"parcel-plugin-prefetch@file:..":
   version "1.0.0"
   dependencies:
     isomorphic-fetch "^2.2.1"
-    parcel-bundler "^1.6.2"
 
 parse-asn1@^5.0.0:
   version "5.1.0"

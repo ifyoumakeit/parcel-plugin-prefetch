@@ -1,4 +1,4 @@
-import { foo, STATES } from "./data.jsonf";
+import { foo, STATES } from "./data.jsonpf";
 
 const root = document.querySelector("#root");
 

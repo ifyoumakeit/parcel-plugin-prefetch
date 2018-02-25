@@ -1,3 +1,3 @@
 module.exports = bundler => {
-  bundler.addAssetType("jsonf", require.resolve("./lib/asset_type"));
+  bundler.addAssetType("jsonpf", require.resolve("./lib/asset_type"));
 };
